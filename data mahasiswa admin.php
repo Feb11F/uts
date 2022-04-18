@@ -5,7 +5,21 @@
 	$pass = ""	;									
 	$database = "febrian";
 	$koneksi= mysqli_connect($server,$user,$pass,$database) or die(mysqli_error($koneksi));
-	error_reporting(0)
+	error_reporting(0);
+
+//hapus
+	if (isset($_GET['hal']))
+	{
+		if ($_GET['hal']=='hapus'){
+			$hapus= mysqli_query($koneksi, "DELETE from tbl_106 where No = '$_GET[id]'");
+			if($hapus){
+				echo "<script>
+				alert('Hapus data sukses');
+				document.location='data mahasiswa admin.php';
+				</script>";
+			}
+		}
+	}
 ?>
 
 
@@ -75,7 +89,7 @@
 				 <td><?=$data['nilai']?></td>
 				 <td>
 					 <a href="tambah data.php?hal=edit&id=<?=$data['No']?>" class="fa-solid fa-pen"></a>&nbsp;&nbsp;
-					 <a href="data mahasiswa.php?hal=hapus&id=<?=$data['No']?>" class="fa-solid fa-trash-can"></a>
+					 <a href="data mahasiswa admin.php?hal=hapus&id=<?=$data['No']?>" class="fa-solid fa-trash-can"></a>
 				 </td>
 			 </tr>
 			 <?php

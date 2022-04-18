@@ -51,7 +51,6 @@
 				 <th>Nama</th>
 				 <th>Alamat</th>
 				 <th>nilai</th>
-				 <th>Aksi</th>
 			 </tr>
 			 <?php
 			 $No = 1;
@@ -72,10 +71,6 @@
 				 <td><?=$data['Nama']?></td>
 				 <td><?=$data['Alamat']?></td>
 				 <td><?=$data['nilai']?></td>
-				 <td>
-					 <a href="tambah data.php?hal=edit&id=<?=$data['No']?>" class="fa-solid fa-pen"></a>&nbsp;&nbsp;
-					 <a href="data mahasiswa.php?hal=hapus&id=<?=$data['No']?>" class="fa-solid fa-trash-can"></a>
-				 </td>
 			 </tr>
 			 <?php
 			 endwhile;
